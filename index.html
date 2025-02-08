@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Battleship Game</title>
+<script defer src="bundle.js"></script><link href="styles.css" rel="stylesheet"></head>
+<body>
+  <h1>Battleship Game</h1>
+  <button id="toggle-direction">Toggle Direction (Current: Horizontal)</button>
+  <div id="ship-palette"></div>
+  <div id="boards">
+    <div>
+      <h2>Your Board</h2>
+      <div id="player-board" class="board"></div>
+    </div>
+    <button id="play-again">Play Again</button>
+    <div>
+      <h2>Computer Board</h2>
+      <div id="computer-board" class="board"></div>
+    </div>
+  </div>
+  <div id="modal">
+    <div id="modal-content">
+      <p id="modal-message"></p>
+      <button id="modal-button">Close</button>
+    </div>
+  </div>
+
+  <button id="rules-btn">
+    <!-- <img src="https://www.svgrepo.com/show/426047/game-developement.svg" alt="Game Rules" /> -->
+    <span class="rules-icon">&#9432;</span> Rules
+  </button>
+
+  <!-- Side Dialog for Rules -->
+  <div id="rules-dialog" class="rules-dialog">
+    <div class="rules-dialog-content">
+      <button id="close-rules" class="close-btn">&times;</button>
+      <h2>Game Rules</h2>
+      <ul>
+        <li>Drag and drop the ships on your board.</li>
+        <li>Two players secretly place ships of varying lengths on a grid.</li>
+        <li>Both players can not see the fleet of the other, you have to guess where is the ideal position to shoot at!</li>
+        <li>Players take turns "firing" at coordinates on the opponent's grid.</li>
+        <li>A "hit" is marked as "RED" when a shot strikes a ship; a "miss" is marked as "BLUE". </li>
+        <li>A ship is sunk when all its positions have been hit.</li>
+        <li>First player to sink all the opponent's ships wins the game!</li>
+      </ul>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
+  \******************************************************************/
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Roboto', sans-serif;  /* Import Roboto from Google Fonts if desired */
+  background: linear-gradient(135deg, #283048, #859398);
+  color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+/* Boards Container */
+#boards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 20px auto;
+  max-width: 1200px;
+  margin-top: 30px;
+}
+
+/* Board Styles */
+.board {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Row Styling */
+.row {
+  display: flex;
+}
+
+/* Cell Styling */
+.cell {
+  width: 35px;
+  height: 35px;
+  margin: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+}
+
+/* Ship Cells (for player's board) */
+.cell.ship {
+  background-color: #15c321e7;
+}
+
+/* Hit Cells */
+.cell.hit {
+  background-color: #ff4e50;
+}
+
+/* Miss Cells */
+.cell.miss {
+  background-color: #4a90e2;
+}
+
+/* Ship Palette Styles */
+#ship-palette {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.ship-palette-ship {
+  display: flex;
+  cursor: move;
+  gap: 2px;
+}
+
+.ship-segment {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #333, #555);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+#toggle-direction,
+#play-again {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #4a90e2, #50e3c2);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#toggle-direction:hover,
+#play-again:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #50e3c2, #4a90e2);
+}
+
+/* Initially hide the Play Again button */
+#play-again {
+  display: none;
+     /* color: black; */
+   align-items: center;
+   justify-content: center;
+   margin-top: 200px;
+}
+
+/* Modal Styles for Game Result */
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#modal-content {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+}
+
+#modal-button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background: linear-gradient(135deg, #f04c6f, #f7351c);
+  color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#modal-button:hover {
+  background: linear-gradient(135deg, #d83f7f, #cc3f1c);
+  transform: scale(1.05);
+}
+
+/* Optional Game Result Display */
+#game-result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+
+
+/* Rules Button */
+#rules-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+.rules-icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Side Dialog for Rules */
+.rules-dialog {
+  position: fixed;
+  top: 0;
+  right: -300px; /* initially hidden off-screen */
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(160deg, #333847, #859398 );
+
+  /* background: #ffffff; */
+  color: #ffffff;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease;
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.rules-dialog.open {
+  right: 0;
+}
+
+.rules-dialog-content {
+  padding: 20px;
+  position: relative;
+}
+
+/* Close Button inside the Dialog */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #ffffff;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Dialog Heading & List */
+.rules-dialog h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.rules-dialog ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
