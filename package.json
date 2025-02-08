@@ -16,6 +16,7 @@
   },
   "scripts": {
     "build": "npx webpack",
-    "start": "npx webpack serve"
+    "start": "npx webpack serve",
+    "deploy": "NODE_ENV=production npm run build && gh-pages -d dist"
   }
 }

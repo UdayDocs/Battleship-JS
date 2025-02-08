@@ -71,8 +71,6 @@ const DOMController = (() => {
   }
 
 
-
-  
   /**
    * Adds click event listeners to the computer board cells to allow attacks.
    * @param {Object} humanPlayer - The human player object.
